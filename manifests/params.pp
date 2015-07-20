@@ -52,7 +52,7 @@ class apt::params {
   $conf_d         = "${root}/apt.conf.d"
   $preferences    = "${root}/preferences"
   $preferences_d  = "${root}/preferences.d"
-  $keyserver      = 'keyserver.ubuntu.com'
+  $keyserver      = hiera("apt::params::keyserver",'keyserver.ubuntu.com')
 
   $config_files = {
     'conf'   => {
